@@ -1,0 +1,21 @@
+{
+    "name": "ru.leopotam.ecsproto.unity",
+    "author": "Leopotam",
+    "displayName": "LeoECS Proto Unity",
+    "description": "LeoECS Proto Unity - набор расширений для LeoECS Proto, выполняющих интеграцию в Unity.",
+    "unity": "2021.3",
+    "version": "2025.9.8",
+    "keywords": [
+        "leoecs",
+        "proto",
+        "ecs",
+        "performance",
+        "unity",
+        "integration"
+    ],
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://gitverse.ru/leopotam/ecsproto.unity.git"
+    }
+}

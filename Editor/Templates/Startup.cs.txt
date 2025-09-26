@@ -1,0 +1,61 @@
+﻿using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
+using Leopotam.EcsProto.Unity;
+using UnityEngine;
+
+namespace #NS# {
+    sealed class #SCRIPTNAME# : MonoBehaviour {
+        ProtoWorld _world;
+        IProtoSystems _systems;
+
+        void Start () {
+            _world = new ProtoWorld (new #SCRIPTNAME#Aspect ());
+            _systems = new ProtoSystems (_world);
+            _systems
+                // Инъекция в поля систем.
+                .AddModule (new AutoInjectModule ())
+
+                // Регистрация дополнительных миров.
+                // .AddWorld (new ProtoWorld (new TestAspect2 ()), "events")
+
+                // Интеграция основных unity-систем.
+                .AddModule (new UnityModule ())
+
+                // Регистрация дополнительных модулей.
+                // .AddModule (new TestModule1 ())
+
+                // Регистрация систем.
+                // .AddSystem (new TestSystem1 ())
+                // .AddSystem (new TestSystem2 ())
+
+                // Регистрация сервисов.
+                // .AddService (new Service1 ())
+
+                .Init ();
+        }
+
+        void Update () {
+            // Обработка систем.
+            _systems?.Run ();
+        }
+
+        void OnDestroy () {
+            // Очистка систем.
+            _systems?.Destroy ();
+            _systems = null;
+
+            // Очистка дополнительных миров.
+
+            // Очистка основного мира.
+            _world?.Destroy ();
+            _world = null;
+        }
+    }
+
+    sealed class #SCRIPTNAME#Aspect : ProtoAspectInject {
+        // Регистрация модулей.
+        // public readonly MyModule1 Module1;
+        // Регистрация пулов.
+        // public readonly ProtoPool<C1> C1;
+    }
+}

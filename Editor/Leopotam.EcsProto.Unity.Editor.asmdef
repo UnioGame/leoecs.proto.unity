@@ -1,0 +1,20 @@
+{
+    "name": "Leopotam.EcsProto.Unity.Editor",
+    "rootNamespace": "Leopotam.EcsProto.Unity.Editor",
+    "references": [
+        "Leopotam.EcsProto",
+        "Leopotam.EcsProto.Unity",
+        "Leopotam.EcsProto.QoL"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

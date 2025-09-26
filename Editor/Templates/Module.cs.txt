@@ -1,0 +1,31 @@
+﻿using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
+
+namespace #NS#.#SCRIPTNAME# {
+    public sealed class #SCRIPTNAME#Module : IProtoModule {
+        // Передача параметров для настройки интеграции.
+        // public #SCRIPTNAME#Module (string pointName1, string pointName2) { }
+
+        public void Init (IProtoSystems systems) {
+            // Регистрация систем модуля.
+            // systems
+            //     .AddSystem (new TestSystem1 ())
+            //     .AddSystem (new TestSystem2 ());
+            //     .AddService (new TestService1 ());
+        }
+
+        // Метод должен вернуть список аспектов модуля, либо null.
+        public IProtoAspect[] Aspects () {
+            return new IProtoAspect[] { new #SCRIPTNAME#Aspect () };
+        }
+
+        // Метод должен вернуть список подмодулей этого модуля, либо null.
+        public IProtoModule[] Modules () => null;
+    }
+
+    public sealed class #SCRIPTNAME#Aspect : ProtoAspectInject {
+        // Регистрация пулов.
+        // public readonly ProtoPool<C1> C1;
+        // public readonly ProtoPool<C2> C2;
+    }
+}
